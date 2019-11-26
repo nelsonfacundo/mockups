@@ -1,0 +1,81 @@
+@import url(menu.css);
+@import url(footer.css);
+
+
+
+@font-face
+{
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+
+
+body {
+  font-family: grendel;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  background-image: url("../img/fondo.jpg");
+}
+
+h1
+{
+  font-size: 35px;
+  width: 100%;
+  text-align: center;
+  color: #a9a87f;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
+.container
+{
+  width: 100%;
+}
+.contenido
+{
+  max-width: 1000px;
+  width: 100%;
+  margin: 125px auto;
+}
+#content-all
+{
+  background-color: black;
+  background-size: 100% auto;
+  min-height: 600px;
+
+}
+
+section
+{
+  display: block;
+}
+article
+{
+  text-align: center;
+}
+article button
+{
+  color: black;
+  margin: 20px;
+  width: 150px;
+  height: 30px;
+}
+.pregunta ul li
+{
+  margin: 30px;
+  font-size: 25px;
+  list-style:none
+}

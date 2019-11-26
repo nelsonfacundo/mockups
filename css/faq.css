@@ -1,0 +1,93 @@
+@import url(menu.css);
+@import url(footer.css);
+
+@font-face {
+    font-family: "grendel";
+    src: url("../fuentes/grendel.ttf");
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  body {
+    margin: 0;
+    font-family: grendel;
+    background-image: url("https://i.ytimg.com/vi/SkgTxQm9DWM/maxresdefault.jpg");
+    background-size: 50% 50%;
+  }
+  
+  .container {
+    width: 100%;
+   }
+  
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .fondo{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .lista{
+    background: white;
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+    list-style: none;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .pregunta{
+    height: 50px;
+    padding: 9px;
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+  }
+  .pregunta i{
+    font-size: 21px;
+    transition: .3s;
+  }
+  .pregunta span{
+    transition: .3s;
+  }
+  .pregunta:hover span{
+    margin-left: 15px;
+  }
+  .pregunta:last-child{
+    border: none;
+  }
+  .respuesta{
+    text-align: justify;
+    background: #f3f3f3;
+    height: 3px;
+    overflow: hidden;
+    transition: .5s;
+    padding: 0 14px;
+  }
+  /* Estilos para una pregunta seleccionada */
+  .resp_act{
+    padding-top: 5px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid grey;
+  }
+  .ico_resp_act{
+    transform: rotate(300deg);
+  }
+
+  @media screen and (max-width: 320px){
+    .lista{
+      font-size:12px;
+    }
+  }

@@ -1,0 +1,143 @@
+@import url(menu.css);
+@import url(footer.css);
+
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+}
+
+
+.contenido {
+  background-color: black;
+}
+
+
+/*---------------------Formulario--------------------------*/
+
+.formulario {
+  width: 100%;
+  margin: 0 auto;
+  background-size: 100% 100%;
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+.subtitulo { 
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 10%;
+  text-align: center;
+  border: solid white 5px;
+  border-radius: 10px;
+  font-size:26px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: transparent;
+  background-image: url("https://media.giphy.com/media/xUPGcyTe2I8FvXy9EI/giphy.gif");
+    -webkit-background-clip:text;
+}
+
+.formulario-container{
+  background: rgba(22, 17, 68, 0.9);
+  width: 40%;
+  margin-top: 80px;
+  margin-bottom: 15px;
+  margin-left:30%;
+  border: solid white 5px;
+  border-radius: 10px;
+}
+
+.name{
+  color: thistle;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 23px;
+  text-decoration: underline;
+  }
+  
+  .mail{
+    color: thistle;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 23px;
+  text-decoration: underline;
+  }
+  
+  .message {
+    color: thistle;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 23px;
+    text-decoration: underline;
+  }
+  
+  #message {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+input{
+width: 250px;
+height: 30px;
+text-align: left;
+}
+
+
+.formulario-button {
+margin-top: 50px;
+}
+
+button{
+  margin-bottom: 10%;
+  padding:15px 15px;  
+  border:2 white;
+  color: black;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+}
+
+/*---------------------Footer--------------------------*/
+
+.block-footer {
+  padding-top: 10px;
+  padding-right: 73px;
+}
+
+a{
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/*---------------------Media Queries--------------------------*/
+
+@media (max-width: 768px){
+
+body {
+  width: 100%;
+  background: rgba(22, 17, 68, 0.9);
+}
+
+.contenido {
+  width: 100%;
+}
+
+.formulario-container {
+  width: 100%;
+  margin-left: 0%;
+}
+.subtitulo {
+  font-size: 20px;
+}
+
+#footer {
+  width: 100% auto;
+}
+
+}

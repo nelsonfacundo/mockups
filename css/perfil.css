@@ -1,0 +1,273 @@
+@import url(menu.css);
+@import url(footer.css);
+
+
+
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ }
+
+
+body {
+  font-family: grendel;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  background-image: url("../img/fondo.jpg");
+}
+
+.container{
+  width:100%;
+}
+
+
+.contenido
+{
+  max-width: 1000px;
+  width: 100%;
+  margin: 125px auto;
+  height: 700px;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+
+#content-header
+{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+}
+#content-footer
+{
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: bottom;
+  padding: 30px 50px;
+}
+section
+{
+  display: block;
+}
+
+#cont{
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#contenide{
+  background-color: #a9a87f;
+  color: black;
+  padding: 2px;
+  border: 2px solid black;
+}
+
+h3
+{
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  color: #a9a87f;
+}
+
+  
+  
+  #pie{
+     clear: both;
+      width: 80%;
+      height: 400px;
+      float: left;
+      margin-left: 55px;
+      text-align: left;
+      position: relative;
+      bottom: 100px;
+      left: 50%;
+
+    }
+    #pie h2{
+      color: white;
+    }
+  
+  #contenido h2{
+    font-size: 18px;
+    color: black;
+    font-weight: normal
+     }
+   
+  #menu{
+      width: 20%;
+      height: 100%;
+      float: right;
+      background-color: lightgrey;
+      border: 2px solid black;
+      position: relative;
+      top: 350px;
+      right: 70%;
+  
+  
+  }
+  #menu ul{
+    list-style-type: none;
+    font-size: 15px;
+    
+  }
+      
+  #valores{
+    background-color: blanchedalmond;
+    width: 35%;
+    height: 100%;
+    font-size: 15 px;
+    color: black;
+    font-weight: normal;
+    line-height: 60px;
+    border: 2px solid black;
+    padding: 15px;
+  
+  
+    }
+  
+  #foto{
+    width: 180px;
+    height: 180px;
+    float: left;
+    background-color: cyan;
+    border: 2px solid black;
+    position:relative;
+    left: 100px;
+    bottom: 450px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #v1{
+    text-decoration: underline;
+  }
+  
+  #v2{
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* QUERIES */
+@media screen and (max-width: 1200px){
+  #valores{
+  font-size:13px;
+  }
+  #pie{
+  height: 80%;
+  }
+  #menu ul{
+    font-size: 12px; 
+  }
+  }
+
+  @media screen and (max-width: 1080px){
+    #valores{
+    font-size:10px;
+    }
+    #pie{
+    height: 80%;
+    }
+    #menu ul{
+      font-size: 12px; 
+    }
+    }
+
+  @media screen and (max-width: 880px){
+    #valores{
+    font-size:9px;
+    }
+    #pie{
+    height: 90%;
+    }
+    #menu ul{
+      font-size: 9px; 
+    }
+    }
+
+    @media screen and (max-width: 680px){
+      #valores{
+      font-size:7px;
+      }
+      #pie{
+      height: 90%;
+      }
+      #menu{
+        width: 100px;
+        margin-left: 2px;
+      }
+      #menu ul{
+        font-size: 8px; 
+      }
+      #foto{
+        font-size: 10px
+      }
+      }
+  
+
+    @media screen and (max-width: 580px){
+      #cont{
+       width: 95%;
+       margin: 0 auto;
+      }
+
+    #valores{
+      font-size:6px;
+      width: 200px;
+      }
+      #pie{
+      width: 200px;
+      height: 90%;
+      left:-5%;
+      }
+      #menu{
+        width: 100px;
+        margin-left: 2px;
+        right: 0%
+      }
+      #menu ul{
+        font-size: 8px; 
+      }
+      #foto{
+        font-size: 7px;
+        right: 2%;
+        width: 30%;
+        height: 20%;
+      }
+      }
+
+      @media screen and (max-width: 464px){
+        #valores{
+          font-size:5px;
+          width: 100px;
+          }
+          #pie{
+          width: 200px;
+          height: 90%;
+          left:-7%;
+          }
+          #menu{
+            width: 100px;
+            margin-left: 2px;
+            right: 0%
+          }
+          #menu ul{
+            font-size: 6px; 
+          }
+          #foto{
+            width:100%;
+            font-size: 7px;
+            right: 0px;
+            top: 1500px;
+          }
+        }

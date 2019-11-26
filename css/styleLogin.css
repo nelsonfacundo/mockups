@@ -1,0 +1,201 @@
+@import url(menu.css);
+@import url(footer.css);
+
+
+
+@font-face {
+  font-family: "grendel";
+  src: url("../fuentes/grendel.ttf");
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
+  body {
+    background: black;
+    margin: 0 auto;
+    font-family: grendel;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+   
+/* CONTAINER */
+
+.container {
+  width: 100%;
+  margin-top:100px;
+ }
+
+
+ /* CONTENIDO */
+ .contenido {
+  width: 98%;
+  margin: 0 auto;
+  border:3px solid red;
+  border-radius:10px;
+  }
+
+
+  /* TITULO  */
+  .title {
+    width: 100%;      
+}
+
+.title  h1 {
+    font-size: 60px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: grendel;
+    text-transform:uppercase;
+    color: transparent;
+    background-image: url("https://media.giphy.com/media/xUPGcyTe2I8FvXy9EI/giphy.gif");
+    -webkit-background-clip:text;
+  }
+
+  .login-plataformas{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .login-facebook{
+    margin: 0 auto;
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: blue;
+  }
+
+
+  .login-steam{
+    margin:0 auto;
+    margin-top: 20px;
+    padding-left:5px;
+    padding-right: 15px;
+    display:flex;
+    justify-content: center;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: black;
+  }
+
+
+ 
+.icono-facebook{
+  margin:5px 5px;
+}
+
+ .texto-facebook{
+  margin-top: 6px;
+ }
+
+.icono-steam{
+  margin:5px 5px;
+ }
+
+ .texto-steam{
+  margin-top: 6px;
+}
+
+
+
+.fab {
+  color:white;
+  font-size: 30px;
+  font-size: 40px;
+}
+
+
+
+
+/* FORMULARIO  */
+  .formulario {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url("https://media.giphy.com/media/FPlzp50M94WFW/giphy.gif");
+    background-size: 100% 100%;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+
+.subtitulo { 
+    text-align: center;
+    font-size:30px;
+    color:white;
+    text-decoration: underline;
+}
+
+
+.formulario-container{
+    margin-top:30px;
+}
+
+label{
+    margin-top:50px;
+    color:white;
+    font-size:30px;
+}
+
+input{
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  }
+  
+input:hover{
+  background:violet;
+}
+
+p{
+  color:white;
+}
+
+a{
+  color:red;
+}
+
+
+.formulario-button {
+  margin-top: 50px;
+}
+
+button{
+background: none;
+border:none;
+font-size: 30px;
+color:white;
+}
+
+
+
+/*MEDIAS QUERIES  */
+
+
+
+@media (min-width:1180px){
+  
+
+  .contenido {
+    width: 60%;
+    margin: 0 auto;
+    border:3px solid red;
+    border-radius:10px;
+    }
+  
+  
+  body {
+          background-image: url("../img/shovel-knight-bg-left.png"), url("../img/shovel-knight-bg-right.png");
+          background-position: left , right ;
+          background-repeat: no-repeat, no-repeat;
+          background-size:contain;
+        }
+        
+  }

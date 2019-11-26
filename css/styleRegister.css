@@ -1,0 +1,153 @@
+@import url(menu.css); 
+@import url(footer.css);
+
+@font-face {
+    font-family: "grendel";
+    src: url("../fuentes/grendel.ttf");
+  }
+  
+  *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+
+
+
+  body {
+    background: black;
+    margin: 0;
+    font-family: grendel;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  
+  .container {
+    width: 100%;
+    margin-top:100px;
+   }
+   
+
+/* CONTENIDO */  
+   
+.contenido {
+    width: 98%;
+    margin: 0 auto;
+    border:3px solid red;
+    border-radius:10px;
+    }
+
+ /* TITULO  */
+
+    .title {
+        width: 100%;      
+    }
+   
+    .title  h1 {
+        font-size: 60px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: grendel;
+        text-transform:uppercase;
+        color: transparent;
+        background-image: url("https://media.giphy.com/media/xUPGcyTe2I8FvXy9EI/giphy.gif");
+        -webkit-background-clip:text;
+      }
+
+
+
+      /* FORMULARIO*/
+
+    .formulario {
+        width: 100%;
+        margin: 0 auto;
+        background-image: url("https://media.giphy.com/media/FPlzp50M94WFW/giphy.gif");
+        background-size: 100% 100%;
+        display:flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .subtitulo { 
+        text-align: center;
+        font-size:30px;
+        color:white;
+        text-decoration: underline;
+    }
+
+
+    .formulario-container{
+        margin-top:30px;
+    }
+
+    label{
+        margin-top:50px;
+        color:white;
+        font-size:30px;
+    }
+
+
+    p{
+        color:white;
+    }
+
+    a{
+        color:red;
+    }
+
+
+    input{
+        width: 250px;
+        height: 30px;
+        text-align: center;
+        }
+        
+      input:hover{
+        background:violet;
+      }
+      
+
+.block-display-edad{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.formulario-button {
+    margin-top: 50px;
+}
+
+button{
+background: none;
+border:none;
+font-size: 30px;
+color:white;
+}
+
+
+.terminos{
+    margin-top:20px;
+}
+
+
+
+@media (min-width:1180px){
+    
+       
+.contenido {
+    width: 60%;
+    margin: 0 auto;
+    border:3px solid red;
+    border-radius:10px;
+    }
+    
+    body {
+            background-image: url("../img/shovel-knight-bg-left.png"), url("../img/shovel-knight-bg-right.png");
+            background-position: left , right ;
+            background-repeat: no-repeat, no-repeat;
+            background-size:contain;
+          }
+          
+    }
