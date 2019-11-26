@@ -8,16 +8,11 @@
     left: 0;
     z-index: 100;
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   .main-header{
     width: 98%;
     margin: 0 auto;
   }
-<<<<<<< HEAD
 
   .main-header img {
     width: 63px;
@@ -32,32 +27,13 @@
 
 
 
-=======
-  
-  .main-header img {
-    width: 63px;
-    float: left;
-  }
-  
-  
-  #menu-bar{
-    display: none;
-  }
-  
-  
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   #header label {
     float: right;
     font-size: 30px;
     margin: 15px 5px;
     cursor: pointer;
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   .menu {
     position: absolute;
     top: 65px;
@@ -68,11 +44,7 @@
     transition: all 0.5s;
     transform: translateX(-100%);
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   .menu a {
     display: block;
     color:white;
@@ -83,7 +55,6 @@
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255,255,0.5);
   }
-<<<<<<< HEAD
 
   .menu a:hover{
     background: rgba(255, 255,255,0.3);;
@@ -133,18 +104,3 @@
 
     
 }
-=======
-  
-  .menu a:hover{
-    background: rgba(255, 255,255,0.3);;
-  }
-  
-  
-  #header .main-header {
-    display:table; /*limpia la flotacion */
-  }
-  
-  #menu-bar:checked ~ .menu {
-    transform: translateX(0%);
-  }
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127

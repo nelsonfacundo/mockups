@@ -3,40 +3,25 @@
     height: 100px;
     background: rgb(13, 6, 53);
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   #footer img {
     width: 62px;
     border-radius: 150px;
     margin-top: 20px;
     margin-left: 10px;
     float: left;
-<<<<<<< HEAD
 
   }
 
   #footer ul {
     margin-top:20px;
     padding-top: 25px;
-=======
-  }
-  
-  #footer ul {
-    margin-top:20px;
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
   #footer ul li  {
     padding: 5px 10px;
     list-style: none;
@@ -44,7 +29,3 @@
   #footer ul li a {
     color: white;
   }
-<<<<<<< HEAD
-=======
-  
->>>>>>> 16ec69505db1d31ff8993ed817846fafd12b0127
