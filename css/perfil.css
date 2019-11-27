@@ -9,265 +9,184 @@
 }
 
 
-
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
  }
 
-
-body {
-  font-family: grendel;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  color: white;
+ body{
   background-image: url("../img/fondo.jpg");
-}
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+ }
 
-.container{
-  width:100%;
-}
+
+ .container {
+   width: 100%;
+   position: absolute;
+   top: 65px;
+
+ }
 
 
-.contenido
-{
-  max-width: 1000px;
+ /*CONTENIDO */
+ 
+ #main{
+  margin: 0 auto;
   width: 100%;
-  margin: 125px auto;
-  height: 700px;
-  background-color: rgba(255,255,255,0.5);
-  text-align: center;
-  padding: 5px;
-  border: 2px solid black;
-}
-
-
-#content-header
-{
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: top;
-}
-#content-footer
-{
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: bottom;
-  padding: 30px 50px;
-}
-section
-{
-  display: block;
-}
-
-#cont{
-  overflow: hidden;
-  box-sizing: border-box;
-}
-#contenide{
-  background-color: #a9a87f;
-  color: black;
-  padding: 2px;
-  border: 2px solid black;
-}
-
-h3
-{
-  font-size: 25px;
-  width: 100%;
-  text-align: center;
-  color: #a9a87f;
-}
-
-  
-  
-  #pie{
-     clear: both;
-      width: 80%;
-      height: 400px;
-      float: left;
-      margin-left: 55px;
-      text-align: left;
-      position: relative;
-      bottom: 100px;
-      left: 50%;
-
-    }
-    #pie h2{
-      color: white;
-    }
-  
-  #contenido h2{
-    font-size: 18px;
-    color: black;
-    font-weight: normal
-     }
-   
-  #menu{
-      width: 20%;
-      height: 100%;
-      float: right;
-      background-color: lightgrey;
-      border: 2px solid black;
-      position: relative;
-      top: 350px;
-      right: 70%;
-  
-  
+  min-height: 645px;
   }
-  #menu ul{
-    list-style-type: none;
-    font-size: 15px;
+
+
+  .main-container{
+    width: 100%;
+    margin-top:30px;
+    background: rgba(152, 147, 146,0.3);
+    border-radius: 5px;
+  }
+
+/* CONTENEDOR TITULO - EDIT PERFIL */
+  .intro{
+    margin: 0 auto;
+    width: 95%;
+    overflow: hidden;
+    border-bottom: 1px solid black;
+  }
+
+
+
+  h1{
+    float: left;
+    color:black;
+    font-size: 35px;
+    margin-left: 10px;
+  }
+
+  .edit {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+  }
+
+  .edit a {
+    font-size:15px;
+    padding: 3px 7px;
+    color: white;
+    background: rgb(13, 6, 53);
+    text-decoration: none;
+    border-radius: 3px;
+    text-shadow: #222 0 1px 0;
+  }
+
+  /*CONTENEDOR PROFILE */
+
+  .profile{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .profile h2 {
+  color:black;
+ }
+
+  .profile img {
+    width:130px;
+    float: left;
+    margin-top:25px;
+    margin-left:30px;
+  }
+
+  .block-profile{
+    float: right;
+    width: 40%;
+    margin-top:25px;
+    margin-right: 20px;
+  }
+
+  .block-profile ul {
+    list-style: none;
     
   }
+
+  .block-profile ul li {
+    border-bottom: 1px solid black;
+    margin-top:10px;
+  }
+
+  .block-profile p {
+    display: inline;
+    margin-left: 5px;
+  }
+
+/* BLOQUE LOGROS  */
+
+.logros{
+  width: 70%;
+  margin: 0 auto;  
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.logros h2 {
+  text-align: center;
+  font-size:40px;
+  color:black;
+  text-decoration: underline black;
+}
+
+.block-logros ul{
+  margin: 0 ;
+  margin-top:30px;
+  display: flex;
+  flex-flow: row wrap;  
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.block-logros ul li {
+  margin: 0 auto;
+}
+
+
+
+
+
+/* MEDIAS QUERIES */
+
+  @media (min-width:900px) {
+
+
+    .main-container{
+      width: 60%;
+      margin-left: 50px;
       
-  #valores{
-    background-color: blanchedalmond;
-    width: 35%;
-    height: 100%;
-    font-size: 15 px;
-    color: black;
-    font-weight: normal;
-    line-height: 60px;
-    border: 2px solid black;
-    padding: 15px;
+    }
+    .profile{
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .logros{
+      width: 100%;
+    }
+    
+
+    .block-logros ul{
+      flex-flow: row ;
+    }
+
+  }
+
+
   
+  @media (min-width:1180px) {
+
+    .main-container{
+      width: 45%;
+      margin-left: 50px;
+    }
   
-    }
-  
-  #foto{
-    width: 180px;
-    height: 180px;
-    float: left;
-    background-color: cyan;
-    border: 2px solid black;
-    position:relative;
-    left: 100px;
-    bottom: 450px;
-    text-align: center;
-    padding: 20px;
   }
-  
-  #v1{
-    text-decoration: underline;
-  }
-  
-  #v2{
-    font-style: italic;
-    text-align: center;
-  }
-
-  /* QUERIES */
-@media screen and (max-width: 1200px){
-  #valores{
-  font-size:13px;
-  }
-  #pie{
-  height: 80%;
-  }
-  #menu ul{
-    font-size: 12px; 
-  }
-  }
-
-  @media screen and (max-width: 1080px){
-    #valores{
-    font-size:10px;
-    }
-    #pie{
-    height: 80%;
-    }
-    #menu ul{
-      font-size: 12px; 
-    }
-    }
-
-  @media screen and (max-width: 880px){
-    #valores{
-    font-size:9px;
-    }
-    #pie{
-    height: 90%;
-    }
-    #menu ul{
-      font-size: 9px; 
-    }
-    }
-
-    @media screen and (max-width: 680px){
-      #valores{
-      font-size:7px;
-      }
-      #pie{
-      height: 90%;
-      }
-      #menu{
-        width: 100px;
-        margin-left: 2px;
-      }
-      #menu ul{
-        font-size: 8px; 
-      }
-      #foto{
-        font-size: 10px
-      }
-      }
-  
-
-    @media screen and (max-width: 580px){
-      #cont{
-       width: 95%;
-       margin: 0 auto;
-      }
-
-    #valores{
-      font-size:6px;
-      width: 200px;
-      }
-      #pie{
-      width: 200px;
-      height: 90%;
-      left:-5%;
-      }
-      #menu{
-        width: 100px;
-        margin-left: 2px;
-        right: 0%
-      }
-      #menu ul{
-        font-size: 8px; 
-      }
-      #foto{
-        font-size: 7px;
-        right: 2%;
-        width: 30%;
-        height: 20%;
-      }
-      }
-
-      @media screen and (max-width: 464px){
-        #valores{
-          font-size:5px;
-          width: 100px;
-          }
-          #pie{
-          width: 200px;
-          height: 90%;
-          left:-7%;
-          }
-          #menu{
-            width: 100px;
-            margin-left: 2px;
-            right: 0%
-          }
-          #menu ul{
-            font-size: 6px; 
-          }
-          #foto{
-            width:100%;
-            font-size: 7px;
-            right: 0px;
-            top: 1500px;
-          }
-        }
