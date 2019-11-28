@@ -15,16 +15,9 @@
   box-sizing: border-box;
  }
 
- body{
-  background-image: url("../img/fondo.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat; 
-  background-attachment: fixed;
- }
-
 
  .container {
-   width: 100%;
+  width: 100%;
    position: absolute;
    top: 65px;
 
@@ -36,15 +29,18 @@
  #main{
   margin: 0 auto;
   width: 100%;
-  min-height: 645px;
+  height: 825px;
+  display: flex;
+  flex-wrap: wrap;
   }
 
 
   .main-container{
     width: 100%;
     margin-top:30px;
-    background: rgba(152, 147, 146,0.3);
+    background: rgb(13, 6, 53);
     border-radius: 5px;
+    float: left;
   }
 
 /* CONTENEDOR TITULO - EDIT PERFIL */
@@ -59,7 +55,7 @@
 
   h1{
     float: left;
-    color:black;
+    color:white;
     font-size: 35px;
     margin-left: 10px;
   }
@@ -73,8 +69,8 @@
   .edit a {
     font-size:15px;
     padding: 3px 7px;
-    color: white;
-    background: rgb(13, 6, 53);
+    color: red;
+    background:white;
     text-decoration: none;
     border-radius: 3px;
     text-shadow: #222 0 1px 0;
@@ -89,7 +85,7 @@
   }
 
   .profile h2 {
-  color:black;
+  color:white;
  }
 
   .profile img {
@@ -112,43 +108,77 @@
   }
 
   .block-profile ul li {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     margin-top:10px;
+    color:white;
   }
 
   .block-profile p {
     display: inline;
     margin-left: 5px;
+    color:white;
   }
 
 /* BLOQUE LOGROS  */
 
 .logros{
   width: 70%;
+  height: 300px;
   margin: 0 auto;  
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .logros h2 {
   text-align: center;
   font-size:40px;
-  color:black;
-  text-decoration: underline black;
+  color:white;
+  text-decoration: underline white;
 }
 
 .block-logros ul{
-  margin: 0 ;
+  margin: 0  auto;
   margin-top:30px;
   display: flex;
   flex-flow: row wrap;  
   list-style: none;
-  margin-bottom: 30px;
 }
 
 .block-logros ul li {
-  margin: 0 auto;
+  margin-left: 10px;
 }
+
+
+/* LISTA DE AMIGOS*/
+
+.friend-list{
+  width: 100%;
+  float: right;
+  margin-top:30px;
+  background: rgb(13, 6, 53);
+  border-radius: 5px;
+}
+
+
+ h2 {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -178,6 +208,15 @@
       flex-flow: row ;
     }
 
+    .block-logros ul li {
+      margin: 0 auto;
+    }
+
+    .friend-list{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+     }
   }
 
 
@@ -189,4 +228,10 @@
       margin-left: 50px;
     }
   
+    .friend-list{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+     }
+
   }
