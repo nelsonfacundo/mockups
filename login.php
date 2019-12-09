@@ -19,14 +19,14 @@
                  <label class="fas fa-bars" for="menu-bar"></label>
                  <nav class="menu">
                     <ul>
-                        <li><a href="index.html">inicio</a></li>
-                        <li><a href="ranking.html">ranking</a></li>
-                        <li><a href="perfil.html">perfil</a></li>
+                        <li><a href="index.php">inicio</a></li>
+                        <li><a href="ranking.php">ranking</a></li>
+                        <li><a href="perfil.php">perfil</a></li>
                         <li><a href="faq">Faq</a></li>
-                        <li><a href="ABM.html">ABM</a></li>
-                        <li><a href="contacto.html">contactanos</a></li>
-                        <li><a href="register.html">registrate</a></li>
-                        <li><a href="login.html">iniciar sesion</a></li>
+                        <li><a href="ABM.php">ABM</a></li>
+                        <li><a href="contacto.php">contactanos</a></li>
+                        <li><a href="register.php">registrate</a></li>
+                        <li><a href="login.php">iniciar sesion</a></li>
                     </ul>
                  </nav>
             </div>

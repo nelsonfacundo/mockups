@@ -1,3 +1,8 @@
+<?php
+
+  require("validacionRegister.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -19,14 +24,14 @@
                  <label class="fas fa-bars" for="menu-bar"></label>
                  <nav class="menu">
                     <ul>
-                        <li><a href="index.html">inicio</a></li>
-                        <li><a href="ranking.html">ranking</a></li>
-                        <li><a href="perfil.html">perfil</a></li>
+                        <li><a href="index.php">inicio</a></li>
+                        <li><a href="ranking.php">ranking</a></li>
+                        <li><a href="perfil.php">perfil</a></li>
                         <li><a href="faq">Faq</a></li>
-                        <li><a href="ABM.html">ABM</a></li>
-                        <li><a href="contacto.html">contactanos</a></li>
-                        <li><a href="register.html">registrate</a></li>
-                        <li><a href="login.html">iniciar sesion</a></li>
+                        <li><a href="ABM.php">ABM</a></li>
+                        <li><a href="contacto.php">contactanos</a></li>
+                        <li><a href="register.php">registrate</a></li>
+                        <li><a href="login.php">iniciar sesion</a></li>
                     </ul>
                  </nav>
             </div>
@@ -40,17 +45,34 @@
                           <div class="subtitulo">
                               <h2>Registro</h2>
                           </div>
+                        <form action="" method="post">
                           <div class="formulario-nombre">
-                            <label for="nombre">Usuario:</label><br>
-                                <input id="nombre" type="text" name="nombre" placeholder="ingrese su nombre">
+                            <label for="username">Usuario:</label><br>
+                                <input id="username" type="text" name="username" placeholder="ingrese su nombre"><br/>
+                               <?php if(isset($errores['username'])): ?>
+                               <span style="color:red;"><?= $errores['username']?></span>
+                              <?php endif; ?>
                           </div>
                           <div class="formulario-pass">
                             <label for="pass">Contraseña:</label><br>
-                                <input id="pass" type="password" name="pass" placeholder="ingrese su contraseña">
+                                <input id="pass" type="password" name="pass" placeholder="ingrese su contraseña"><br>
+                               <?php if(isset($errores["pass"])): ?>
+                               <span style="color:red;"><?= $errores["pass"]?></span>
+                              <?php endif; ?>
+                          </div>
+                          <div class="formulario-repass">
+                            <label for="reppas">Confirmacion:</label><br>
+                              <input id="repass" type="password" name="repass" placeholder="Ingresá confirmacion"><br>
+                               <?php if(isset($errores["repass"])): ?>
+                               <span style="color:red;"><?= $errores["repass"]?></span>
+                              <?php endif; ?>
                           </div>
                           <div class="formulario-email">
                             <label for="email">Email:</label><br>
-                              <input id="email" type="email" name="email" placeholder="ingrese su email">
+                              <input id="email" type="email" name="email" placeholder="ingrese su email"><br/>
+                              <?php if(isset($errores['email'])): ?>
+                              <span style="color:red;"><?= $errores['email']?></span>
+                              <?php endif;?>
                           </div>
                           <div class="formulario-edad">
                               <p>Fecha de nacimiento:</p>
@@ -149,9 +171,10 @@
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>
+                          </form>  
                               <div class="terminos">
                                 <p>Al registrarte,Aceptas nuestras condiciones de uso  y policita de privacidad</p>
-                                <p>Ya tienes cuenta ? <a href="login.html">iniciar sesion</a> </p>
+                                <p>Ya tienes cuenta ? <a href="login.php">iniciar sesion</a> </p>
                               </div>
                       </div>
                     </div>
