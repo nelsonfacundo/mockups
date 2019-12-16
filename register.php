@@ -1,6 +1,31 @@
 <?php
+  
 
-  require("validacionRegister.php");
+require('controladores/validacionRegister.php');
+
+if($_POST) {
+
+    $errores = validar($_POST);
+
+    if(!$errores) {
+        $usuario = guardarUsuario($_POST);
+
+        $listaDeUsuarios = file_get_contents('usuarios.json');
+
+        $arrayUsuarios = json_decode($listaDeUsuarios, true);
+
+        $arrayUsuarios[] = $usuario;
+
+        $todosLosUsuarios = json_encode($arrayUsuarios);
+
+        file_put_contents('usuarios.json', $todosLosUsuarios);
+
+        header('Location: login.php');
+        
+    }
+}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -168,6 +193,9 @@
                                 </div>
                               </div>
                           </div>
+                          <?php if(isset($errores["año"])): ?>
+                           <span style="color:red;"><?= $errores["año"]?></span>
+                          <?php endif; ?>
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>
