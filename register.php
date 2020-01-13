@@ -1,8 +1,39 @@
 <?php
+  
+  require('controladores/validacionRegister.php');
 
-  require("validacionRegister.php");
+  if($_POST) {
+  
+      $errores = validar($_POST);
+  
+      if(!$errores) {
+          $usuario = guardarUsuario($_POST);
 
-?>
+          $nombreImagen = guardarAvatar();
+
+          $usuario['avatar'] = $nombreImagen;
+  
+          $listaDeUsuarios = file_get_contents('usuarios.json');
+  
+          $arrayUsuarios = json_decode($listaDeUsuarios, true);
+  
+          $arrayUsuarios[] = $usuario;
+  
+          $todosLosUsuarios = json_encode($arrayUsuarios);
+  
+          file_put_contents('usuarios.json', $todosLosUsuarios);
+  
+  
+          header('Location: login.php');
+          
+      }
+  }
+  
+  
+  
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -45,26 +76,12 @@
                           <div class="subtitulo">
                               <h2>Registro</h2>
                           </div>
-                        <form action="" method="post">
+                        <form action="register.php" method="post" enctype="multipart/form-data" >
                           <div class="formulario-nombre">
                             <label for="username">Usuario:</label><br>
-                                <input id="username" type="text" name="username" placeholder="ingrese su nombre"><br/>
+                                <input id="username" type="text" name="username" placeholder="ingrese su usuario"><br/>
                                <?php if(isset($errores['username'])): ?>
                                <span style="color:red;"><?= $errores['username']?></span>
-                              <?php endif; ?>
-                          </div>
-                          <div class="formulario-pass">
-                            <label for="pass">Contraseña:</label><br>
-                                <input id="pass" type="password" name="pass" placeholder="ingrese su contraseña"><br>
-                               <?php if(isset($errores["pass"])): ?>
-                               <span style="color:red;"><?= $errores["pass"]?></span>
-                              <?php endif; ?>
-                          </div>
-                          <div class="formulario-repass">
-                            <label for="reppas">Confirmacion:</label><br>
-                              <input id="repass" type="password" name="repass" placeholder="Ingresá confirmacion"><br>
-                               <?php if(isset($errores["repass"])): ?>
-                               <span style="color:red;"><?= $errores["repass"]?></span>
                               <?php endif; ?>
                           </div>
                           <div class="formulario-email">
@@ -74,6 +91,27 @@
                               <span style="color:red;"><?= $errores['email']?></span>
                               <?php endif;?>
                           </div>
+                          <div class="formulario-pass">
+                            <label for="pass">Contraseña:</label><br>
+                                <input id="password" type="password" name="password" placeholder="ingrese su contraseña"><br>
+                               <?php if(isset($errores["password"])): ?>
+                               <span style="color:red;"><?= $errores["password"]?></span>
+                              <?php endif; ?>
+                          </div>
+                          <div class="formulario-repass">
+                            <label for="repassword">Confirmacion:</label><br>
+                              <input id="repassword" type="password" name="repassword" placeholder="Ingresá confirmacion"><br>
+                               <?php if(isset($errores["repassword"])): ?>
+                               <span style="color:red;"><?= $errores["repassword"]?></span>
+                              <?php endif; ?>
+                          </div>
+                          <div class="formulario-imagen">
+                          <p>Avatar:</p>
+                          <input type='file' name='avatar'><br>
+                           <?php if(isset($errores['avatar'])): ?>
+                           <span style="color:red;"><?= $errores['avatar']?></span>
+                           <?php endif; ?>
+                         </div>
                           <div class="formulario-edad">
                               <p>Fecha de nacimiento:</p>
                             <div class="block-display-edad">
@@ -168,6 +206,7 @@
                                 </div>
                               </div>
                           </div>
+
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>

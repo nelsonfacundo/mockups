@@ -105,6 +105,11 @@
       input:hover{
         background:violet;
       }
+
+      .formulario-imagen{
+          display:flex;
+          
+      }
       
 
 .block-display-edad{
