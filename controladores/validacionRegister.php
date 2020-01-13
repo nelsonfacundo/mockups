@@ -5,24 +5,40 @@
 function validar($data) {
 
     $errores = [];
+<<<<<<< HEAD
     $verificacion = json_decode(file_get_contents('usuarios.json'), true);
+=======
+    
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
 
       //   VALIDACION NOMBRE 
       if(isset($data["username"])){
         if(empty($data["username"])){
           $errores["username"] = "Usuario esta vacio";
+<<<<<<< HEAD
         } else if (strlen (trim ($data["username"])) < 5){
           $errores["username"]  = "Usuario tiene que tener al menos 5 caracteres";
            } else {
+=======
+        } elseif (strlen (trim ($data["username"])) < 5){
+          $errores["username"]  = "Usuario tiene que tener al menos 5 caracteres";
+           }else {
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
             foreach($verificacion as $usuario){
               if($usuario["username"] == $data["username"]){
                 $errores["username"] = "Este usuario ya esta registrada";
               }
             }
            }
+<<<<<<< HEAD
        } 
 
 
+=======
+           
+       } 
+
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
         //   VALIDACION EMAIL 
       if(isset($data["email"])){
         if(empty($data["email"])){
@@ -46,7 +62,10 @@ function validar($data) {
             $errores["password"]  = "La contraseña debe tener al menos 6 caracteres";
           }
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
       
         //VALIDACION RECONTRASEÑA 
         if(isset($data["repassword"])){
@@ -57,6 +76,7 @@ function validar($data) {
           }
         }
 
+<<<<<<< HEAD
         // CAMPO AVATAR
         $avatar = $_FILES['avatar'];
         if($avatar['error']) {
@@ -68,16 +88,23 @@ function validar($data) {
         }
         }
 
+=======
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
         // VALIDACION EDAD 
           $fechas = getdate();
           if( ($fechas["year"] - $data["año"]) < 18) {
               $errores["año"]   = "Tienes que ser mayor de 18";
           } 
 
+<<<<<<< HEAD
+=======
+          
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
 
         return $errores;
       }
 
+<<<<<<< HEAD
       function guardarAvatar() {
         // me guardo la extensión del archivo
         $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
@@ -99,6 +126,8 @@ function validar($data) {
     }
     
 
+=======
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
 
 function guardarUsuario($data) {
     
@@ -113,5 +142,8 @@ function guardarUsuario($data) {
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
 ?>
