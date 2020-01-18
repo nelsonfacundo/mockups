@@ -1,65 +1,25 @@
 <?php
   
-<<<<<<< HEAD
-  require('controladores/validacionRegister.php');
+  require('controladores/funciones.php');
 
   if($_POST) {
-  
-      $errores = validar($_POST);
-  
-      if(!$errores) {
-          $usuario = guardarUsuario($_POST);
 
-          $nombreImagen = guardarAvatar();
+    $errores = validarRegistro($_POST);
 
-          $usuario['avatar'] = $nombreImagen;
-  
-          $listaDeUsuarios = file_get_contents('usuarios.json');
-  
-          $arrayUsuarios = json_decode($listaDeUsuarios, true);
-  
-          $arrayUsuarios[] = $usuario;
-  
-          $todosLosUsuarios = json_encode($arrayUsuarios);
-  
-          file_put_contents('usuarios.json', $todosLosUsuarios);
-  
-  
-          header('Location: login.php');
-          
-      }
-  }
+    if(!$errores) {
+    
+        $usuarioNuevo = crearUsuario($_POST);
+        $nombreImagen = guardarAvatar();
+        $usuarioNuevo['avatar'] = $nombreImagen;
+        guardarUsuario($usuarioNuevo);
+        header('Location: login.php');
+       
+    }
+}
   
   
   
   ?>
-=======
-
-require('controladores/validacionRegister.php');
-
-if($_POST) {
-
-    $errores = validar($_POST);
-
-    if(!$errores) {
-        $usuario = guardarUsuario($_POST);
-
-        $listaDeUsuarios = file_get_contents('usuarios.json');
-
-        $arrayUsuarios = json_decode($listaDeUsuarios, true);
-
-        $arrayUsuarios[] = $usuario;
-
-        $todosLosUsuarios = json_encode($arrayUsuarios);
-
-        file_put_contents('usuarios.json', $todosLosUsuarios);
-
-        header('Location: login.php');
-        
-    }
-}
-
->>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
 
 
 <!DOCTYPE html>
@@ -134,7 +94,7 @@ if($_POST) {
                               <?php endif; ?>
                           </div>
                           <div class="formulario-imagen">
-                          <p>Avatar:</p>
+                          <label>Avatar:<label>
                           <input type='file' name='avatar'><br>
                            <?php if(isset($errores['avatar'])): ?>
                            <span style="color:red;"><?= $errores['avatar']?></span>
@@ -234,13 +194,6 @@ if($_POST) {
                                 </div>
                               </div>
                           </div>
-<<<<<<< HEAD
-
-=======
-                          <?php if(isset($errores["año"])): ?>
-                           <span style="color:red;"><?= $errores["año"]?></span>
-                          <?php endif; ?>
->>>>>>> 38dafc7f674c2a8deff36ccd25b1e1e99cb0ea84
                           <div class="formulario-button">
                               <button type="submit" name="button">¡Registrate!</button>
                           </div>

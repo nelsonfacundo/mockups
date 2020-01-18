@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+
+session_start();
+$usuario = $_SESSION['usuarioLogueado'];
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,13 +27,8 @@
                  <nav class="menu">
                     <ul>
                         <li><a href="index.php">inicio</a></li>
-                        <li><a href="ranking.php">ranking</a></li>
-                        <li><a href="perfil.php">perfil</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="ABM.php">ABM</a></li>
                         <li><a href="contacto.php">contactanos</a></li>
-                        <li><a href="register.php">registrate</a></li>
-                        <li><a href="login.php">iniciar sesion</a></li>
+                        <li><a href="sesion-controller.php" style="text-decoration:none;color:inherit;">Cerrar sesión</a></li>
                     </ul>
                  </nav>
             </div>

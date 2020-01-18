@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <?php
 
+require('controladores/funciones.php');
 
+if(estaLogueado()) {
+  header('Location: perfil.php');
+  exit;
+}
 
+if($_POST) {
 
-?>
+  $errores = validarLoguin();
+  if(!$errores) {
+      $usuario = buscarUsuarioPorEmail($_POST['email']);
+      if( isset($_POST['recordarme']) ) {
+          recordarUsuario($_POST['email']);
+      }
+      loguearUsuario($usuario);
+  }
+}
 
-<!DOCTYPE html>
+ ?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -28,7 +43,6 @@
                     <ul>
                         <li><a href="index.php">inicio</a></li>
                         <li><a href="ranking.php">ranking</a></li>
-                        <li><a href="perfil.php">perfil</a></li>
                         <li><a href="faq">Faq</a></li>
                         <li><a href="ABM.php">ABM</a></li>
                         <li><a href="contacto.php">contactanos</a></li>
@@ -66,17 +80,29 @@
                                   </div>
                                 </div>
                             </div>
+                            <form action="login.php" method="post" enctype="multipart/form-data" >
                             <div class="login-nombre">
-                              <label for="nombre">Usuario:</label><br>
-                              <input id="nombre" type="text" name="nombre" placeholder="ingrese su usuario">
+                            <label for="email">Email:</label><br>
+                            <input type='text' name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Ingresá tu email"><br/>
+                             <?php if(isset($errores['email'])): ?> 
+                            <span style="color:red;"><?= $errores['email']?></span>
+                            <?php endif; ?>
                             </div>
                               <div class="login-pass">
                                 <label for="pass">Contraseña:</label><br>
-                                <input id="pass" type="password" name="pass" placeholder="ingrese su contraseña">
+                                <input id="password" type="password" name="password" placeholder="ingrese su contraseña"><br>
+                               <?php if(isset($errores["password"])): ?>
+                               <span style="color:red;"><?= $errores["password"]?></span>
+                              <?php endif; ?>
                               </div>
+                              <div class="guardar">
+                              <label style="display:block;"><input type="checkbox" name="recordarme">Recordarme</label>
+                                </div>
+
                                 <div class="formulario-button">
                                   <button type="submit" name="button">¡Iniciar sesion!</button>
                                 </div>
+                                </form>
                                   <div class="terminos">
                                     <p> <a href="#">¿Olvidaste tu contraseña?</a></p>
                                     <p>No tienes cuenta? <a href="register.html">¡Registrate!</a></p>

@@ -1,1 +1,36 @@
-[{"name":"a","email":"","username":"a","password":"$2y$10$0OMpfjTRg2DbheNo3PjLE.19MBnoL1.L8uIx0teOGF0.ErkjNPP0a"},{"name":"","email":"","username":"","password":"$2y$10$Ai1zcJ3lgWTsR4JSh..u8e8rnghOWZfSsccPiOfb2KAt.NPVws.Ba"},{"name":"","email":"","username":"","password":"$2y$10$zYgYWlpfh8Bgxp40icJ13OKaJeYSuu5JScN\/mlijwykUs9NvS3I1S"},{"name":"123","email":"","username":"123","password":"$2y$10$BKhVK.zz3VwmY9Je1EVGGe92YycXdGO9W21NAu30SH858nGGtR3ke"},{"name":"","email":"","username":"","password":"$2y$10$xqwdQIzKPCeYaxzwmfq5ouGf9T7TrBDFucF6HPYoCSl0csWNi8dNq"}]
+[
+    {
+        "username": "delshire202",
+        "email": "facunati45@hotmail.com",
+        "password": "$2y$10$O2yJhFU5jci6yWCLiGyvSe5CfZnNmnaomTV6KdrOAFlz6gXndJW2i",
+        "edad": [
+            "en",
+            "1",
+            "1990"
+        ],
+        "avatar": "img_5e2374dce64e4.png"
+    },
+    {
+        "username": "delshire50",
+        "email": "facumati45@hotmail.com",
+        "password": "$2y$10$4fZomdk0gj9PvmyU4TM3vuL1fXkAN2WxCQvRiOAuUCzL9A7UZABUu",
+        "avatar": "img_5e23884bdc8c9.png"
+    },
+    {
+        "username": "delshire30",
+        "email": "facumati99@hotmail.com",
+        "password": "$2y$10$WPREEPlZF12PGFfGhoMCUex9.IcMoIVM0ZDQfayfhk3OqbNMWm\/HG",
+        "avatar": "img_5e23887e4b3a4.png"
+    },
+    {
+        "username": "nelson18@hotmail.com",
+        "email": "facumati1@hotmail.com",
+        "password": "$2y$10$t5HWgOf6TbfXtlzjtbkW4.HFFa0uxVCet1NS5vmmP\/.psC5C5dwKy",
+        "edad": [
+            "en",
+            "1",
+            "1990"
+        ],
+        "avatar": "img_5e238e8c9a330.png"
+    }
+]
