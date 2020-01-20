@@ -43,13 +43,13 @@ $usuario = $_SESSION['usuarioLogueado'];
                     </div>
                 </div>  
                 <div class="profile">
-                <img src="avatars/<?= $usuario['avatar'] ?>" width="130px">
+                <img src="img/avatars/<?=$usuario['avatar']?>" >
                     <div class="block-profile">
                         <h2>Informacion:</h2>
                         <ul>
                             <li>Name :<p><?= $usuario['username'] ?></p></li>
                             <li>Email :<p><?= $usuario['email'] ?> </p></li>
-                            <li>Fecha de nacimiento :<p><?= $usuario['edad'] ?></p></li>
+                            <li>Fecha de nacimiento : <p>----</p></li>
                             <li>View :<p>----</p></li>
                         </ul>
                     </div>

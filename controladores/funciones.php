@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 
 //VALIDACION REGISTRO
   
@@ -86,7 +88,7 @@ function validarRegistro($data) {
         $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
         $directorioTemporal = $_FILES['avatar']['tmp_name'];
         $nombreImagen = uniqid('img_') . '.' . $ext;
-        $carpetaFinal = dirname(__FILE__) . '/avatars/' . $nombreImagen;
+        $carpetaFinal = dirname(__DIR__) . '/img/avatars/' . $nombreImagen;
         move_uploaded_file($directorioTemporal, $carpetaFinal);
         return $nombreImagen;
       }
