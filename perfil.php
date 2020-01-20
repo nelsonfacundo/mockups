@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 
 session_start();
@@ -6,6 +5,8 @@ $usuario = $_SESSION['usuarioLogueado'];
 
 ?>
 
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,14 +43,14 @@ $usuario = $_SESSION['usuarioLogueado'];
                     </div>
                 </div>  
                 <div class="profile">
-                    <img src="img/icono-perfil.png" alt="foto">
+                <img src="avatars/<?= $usuario['avatar'] ?>" width="130px">
                     <div class="block-profile">
                         <h2>Informacion:</h2>
                         <ul>
-                            <li>Name :<p>asd</p></li>
-                            <li>Location :<p>asd</p></li>
-                            <li>Join date :<p>123</p></li>
-                            <li>View :<p>123</p></li>
+                            <li>Name :<p><?= $usuario['username'] ?></p></li>
+                            <li>Email :<p><?= $usuario['email'] ?> </p></li>
+                            <li>Fecha de nacimiento :<p><?= $usuario['edad'] ?></p></li>
+                            <li>View :<p>----</p></li>
                         </ul>
                     </div>
                 </div>

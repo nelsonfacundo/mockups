@@ -67,14 +67,14 @@
                         <form action="register.php" method="post" enctype="multipart/form-data" >
                           <div class="formulario-nombre">
                             <label for="username">Usuario:</label><br>
-                                <input id="username" type="text" name="username" placeholder="ingrese su usuario"><br/>
+                                <input id="username" type="text" name="username" value="<?= isset($_POST['username']) ? $_POST['username'] : '' ?>" placeholder="ingrese su usuario"><br/>
                                <?php if(isset($errores['username'])): ?>
                                <span style="color:red;"><?= $errores['username']?></span>
                               <?php endif; ?>
                           </div>
                           <div class="formulario-email">
                             <label for="email">Email:</label><br>
-                              <input id="email" type="email" name="email" placeholder="ingrese su email"><br/>
+                              <input id="email" type="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="ingrese su email"><br/>
                               <?php if(isset($errores['email'])): ?>
                               <span style="color:red;"><?= $errores['email']?></span>
                               <?php endif;?>
@@ -94,11 +94,11 @@
                               <?php endif; ?>
                           </div>
                           <div class="formulario-imagen">
-                          <label>Avatar:<label>
-                          <input type='file' name='avatar'><br>
-                           <?php if(isset($errores['avatar'])): ?>
-                           <span style="color:red;"><?= $errores['avatar']?></span>
-                           <?php endif; ?>
+                            <label>Avatar:<label>
+                              <input type='file' name='avatar'><br>
+                                <?php if(isset($errores['avatar'])): ?>
+                              <span style="color:red;"><?= $errores['avatar']?></span>
+                             <?php endif; ?>
                          </div>
                           <div class="formulario-edad">
                               <p>Fecha de nacimiento:</p>

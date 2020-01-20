@@ -16,9 +16,9 @@ function validarRegistro($data) {
           $errores["username"]  = "Usuario tiene que tener al menos 5 caracteres";
            } else {
              
-            foreach($verificacion as $usuario){
-              if($usuario["username"] == $data["username"]){
-                $errores["username"] = "Este usuario ya esta registrada";
+            foreach($verificacion as $datos){
+              if($datos["username"] == $data["username"]){
+                $errores["username"] = "Este usuario ya esta registrado";
               }
             }
            }
@@ -32,8 +32,8 @@ function validarRegistro($data) {
         }elseif (!filter_var($data["email"],FILTER_VALIDATE_EMAIL)) {
             $errores["email"]  = "Debes ingresar un email valido";
         }else {
-          foreach($verificacion as $usuario){
-            if($usuario["email"] == $data["email"]){
+          foreach($verificacion as $datos){
+            if($datos["email"] == $data["email"]){
               $errores["email"] = "Este email ya esta registrado";
             }
           }
@@ -62,12 +62,12 @@ function validarRegistro($data) {
         // CAMPO AVATAR
         $avatar = $_FILES['avatar'];
         if($avatar['error']) {
-        $errores['avatar'] = "Debe subir una foto de perfil";
+          $errores['avatar'] = "Debe subir una foto de perfil";
         } else {
-        $ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
-        if($ext !== 'jpg' && $ext !== 'jpeg' && $ext !== 'png') {
-          $errores['avatar'] = "La extensión del archivo debe ser jpg, png ó jpeg";
-        }
+            $ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
+            if($ext !== 'jpg' && $ext !== 'jpeg' && $ext !== 'png') {
+              $errores['avatar'] = "La extensión del archivo debe ser jpg, png ó jpeg";
+            }
         }
 
         // VALIDACION EDAD 
@@ -80,6 +80,8 @@ function validarRegistro($data) {
         return $errores;
       }
 
+      // FUNCIÓN PARA GUARGAR IMAGEN
+
       function guardarAvatar() {
         $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
         $directorioTemporal = $_FILES['avatar']['tmp_name'];
@@ -89,19 +91,21 @@ function validarRegistro($data) {
         return $nombreImagen;
       }
     
+      // FUNCIÓN PARA CREAR UN ARRAY ASOCIATIVO CON LOS DATOS QUE ME LLEGAN POR POST
 
       function crearUsuario($data) {
     
         $usuario = [
           "username" => $data["username"],
           "email" => $data["email"],
-          "password" => password_hash($data["password"], PASSWORD_DEFAULT),
-          "edad"  => [$data["mes"],$data["dia"],$data["año"]]
-        ];
+          "edad"  => [$data["mes"],$data["dia"],$data["año"]],
+          "password" => password_hash($data["password"], PASSWORD_DEFAULT)
+          ];
         
         return $usuario;
       }
 
+      // FUNCIÓN PARA LEER LOS USUARIOS DEL JSON - db hace referencia a Data Base. La función devuelve un array de los usuarios registrados
       function dbDeUsuarios() {
 
         $listaDeUsuarios = file_get_contents('usuarios.json');
@@ -109,6 +113,7 @@ function validarRegistro($data) {
       
       }
 
+      // FUNCIÓN PARA GUARDAR USUARIO NUEVO EN EL JSON
 
       function guardarUsuario($usuario) {
   
@@ -121,80 +126,78 @@ function validarRegistro($data) {
 
 
       //VALIDACION LOGUIN
-     // LOGUIN
+  
+        function validarLoguin() {
+        $errores = [];
 
-function validarLoguin() {
-  $errores = [];
+        $email = trim($_POST['email']);
+        $pass = trim($_POST['password']);
 
-  $email = trim($_POST['email']);
-  $pass = trim($_POST['password']);
+        if(empty($email)) {
+          $errores['email'] = 'El campo email es obligatorio';
+        } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $errores['email'] = 'El formato introducido no es válido';
+        } elseif(!buscarUsuarioPorEmail($email)) {
+          $errores['email'] = 'Las credenciales no coinciden';
+        } else {
+          $usuario = buscarUsuarioPorEmail($email);
+          if( !password_verify($pass, $usuario['password']) ) {
+            $errores['email'] = 'Las credenciales no coinciden';
+          }
+        }
 
-  if(empty($email)) {
-    $errores['email'] = 'El campo email es obligatorio';
-  } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errores['email'] = 'El formato introducido no es válido';
-  } elseif(!buscarUsuarioPorEmail($email)) {
-    $errores['email'] = 'Las credenciales no coinciden';
-  } else {
-    $usuario = buscarUsuarioPorEmail($email);
-    if( !password_verify($pass, $usuario['password']) ) {
-      $errores['email'] = 'Las credenciales no coinciden';
-    }
-  }
+        if(empty($pass)) {
+          $errores['password'] = 'El campo password es obligatorio';
+        }
 
-  if(empty($pass)) {
-    $errores['password'] = 'El campo password es obligatorio';
-  }
+        return $errores;
 
-  return $errores;
+      }
 
-}
+      // FUNCIÓN PARA BUSCAR USUARIO POR MAIL
 
-// FUNCIÓN PARA BUSCAR USUARIO POR MAIL
-
-function buscarUsuarioPorEmail($email) {
-  $arrayUsuarios = dbDeUsuarios();
-  foreach($arrayUsuarios as $usuario) {
-    if($usuario['email'] == $email) {
-      return $usuario;
-    }
-  }
-}
-
-// FUNCIÓN PARA COMPARAR CONTRASEÑAS
-
-function compararPasswords($pass) {
-
-}
-
-// FUNCIÓN PARA SABER SI ESTÁ LOGUEADO
-
-function estaLogueado() {
-  return isset($_SESSION['usuarioLogueado']);
-  // Pregunta si está seteado el índice usuario en sesión. Devuelve un booleano
-}
+      function buscarUsuarioPorEmail($email) {
+        $arrayUsuarios = dbDeUsuarios();
+        foreach($arrayUsuarios as $usuario) {
+          if($usuario['email'] == $email) {
+            return $usuario;
+          }
+        }
+      }
 
 
-// FUCIÓN PARA GUARDAR AL USUARIO EN SESIÓN
 
-function loguearUsuario($usuario) {
-  // con esta función borro la posición password del array de usuario que recibo, para no guardar ese dato en sesión
-  unset($usuario['password']);
-  // creo una posición de usuarioLogueado en la variale sessión
-  $_SESSION['usuarioLogueado'] = $usuario;
-  // lo redirecciono a la vista de perfil
-  header('Location: perfil.php');
-  // se recomienda hacer un exit después de una redirección
-  exit;
-}
+      function compararPasswords($pass) {
 
-// FUNCIÓN PARA CREAR LA COOKIE DEL USUARIO Y MANTENERLO LOGUEADO
+      }
 
-function recordarUsuario($email) {
-  setcookie('emailUsuario', $email , time() + 3000);
-}
 
+
+      function estaLogueado() {
+        return isset($_SESSION['usuarioLogueado']);
+
+      }
+
+
+      // FUCIÓN PARA GUARDAR AL USUARIO EN SESIÓN
+
+      function loguearUsuario($usuario) {
+
+        unset($usuario['password']);
       
+        $_SESSION['usuarioLogueado'] = $usuario;
+
+        header('Location: perfil.php');
+      
+        exit;
+      }
+
+
+      function recordarUsuario($email) {
+        setcookie('emailUsuario', $email , time() + 3000);
+      }
+
+            
 
 
 ?>

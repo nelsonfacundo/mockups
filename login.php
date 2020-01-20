@@ -80,29 +80,28 @@ if($_POST) {
                                   </div>
                                 </div>
                             </div>
-                            <form action="login.php" method="post" enctype="multipart/form-data" >
+                          <form action="login.php" method="post" enctype="multipart/form-data" >
                             <div class="login-nombre">
-                            <label for="email">Email:</label><br>
-                            <input type='text' name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Ingresá tu email"><br/>
-                             <?php if(isset($errores['email'])): ?> 
-                            <span style="color:red;"><?= $errores['email']?></span>
-                            <?php endif; ?>
+                             <label for="email">Email:</label><br>
+                              <input type='text' name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>" placeholder="Ingresá tu email"><br/>
+                                <?php if(isset($errores['email'])): ?> 
+                                  <span style="color:red;"><?= $errores['email']?></span>
+                                <?php endif; ?>
                             </div>
                               <div class="login-pass">
-                                <label for="pass">Contraseña:</label><br>
-                                <input id="password" type="password" name="password" placeholder="ingrese su contraseña"><br>
-                               <?php if(isset($errores["password"])): ?>
-                               <span style="color:red;"><?= $errores["password"]?></span>
-                              <?php endif; ?>
+                               <label for="pass">Contraseña:</label><br>
+                                 <input id="password" type="password" name="password" placeholder="ingrese su contraseña"><br>
+                                   <?php if(isset($errores["password"])): ?>
+                                     <span style="color:red;"><?= $errores["password"]?></span>
+                                   <?php endif; ?>
                               </div>
                               <div class="guardar">
-                              <label style="display:block;"><input type="checkbox" name="recordarme">Recordarme</label>
-                                </div>
-
-                                <div class="formulario-button">
+                                 <label style="display:block;"><input type="checkbox" name="recordarme">Recordarme</label>
+                              </div>
+                              <div class="formulario-button">
                                   <button type="submit" name="button">¡Iniciar sesion!</button>
                                 </div>
-                                </form>
+                              </form>
                                   <div class="terminos">
                                     <p> <a href="#">¿Olvidaste tu contraseña?</a></p>
                                     <p>No tienes cuenta? <a href="register.html">¡Registrate!</a></p>
